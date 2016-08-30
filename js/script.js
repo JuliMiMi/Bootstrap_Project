@@ -24,22 +24,20 @@ var data = [
     ['w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w']
 ];
 
-var draw = function (container) {
-
-    var container = data;
-    for (var i = 0; i < 20; i++) {
-        drawRow();
-
+var draw = function (containerConfig) {
+    for (var i = 0; i < containerConfig.length; i++) {
+        var rowConfig = containerConfig[i];
+        drawRow(rowConfig);
     }
 };
-var drawRow = function () {
 
-    var row = data[i];
-    for (var k = 0; k < 20; k++)
-
-        drawCell();
-
+var drawRow = function (rowConfig) {
+    for (var i = 0; i < rowConfig.length; i++) {
+        var cellConfig = rowConfig[i];
+        drawCell(cellConfig);
+    }
 };
+
 var drawCell = function (cellConfig) {
     var cell = document.createElement('div');
 
@@ -52,3 +50,5 @@ var drawCell = function (cellConfig) {
     }
     return cell;
 };
+
+draw(data);
