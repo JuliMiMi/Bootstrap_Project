@@ -29,22 +29,19 @@ var create = function (containerConfig) {
     container.className = 'container';
     for (var i = 0; i < containerConfig.length; i++) {
         var rowConfig = containerConfig[i];
-        createRow(rowConfig,rowConfig.length );
-        container.appendChild(createRow());
-
+        var row = createRow(rowConfig);
+        container.appendChild(row);
     }
     document.body.appendChild(container);
-
-
 };
 
-var createRow = function (rowConfig, lengthRow) {
+var createRow = function (rowConfig) {
     var row = document.createElement('div');
     row.className = 'row';
-    for (var i = 0; i < lengthRow; i++) {
+    for (var i = 0; i < rowConfig.length; i++) {
         var cellConfig = rowConfig[i];
-        createCell(cellConfig);
-       row.appendChild(createCell());
+        var cell = createCell(cellConfig);
+        row.appendChild(cell);
     }
     return row;
 };
@@ -60,7 +57,6 @@ var createCell = function (cellConfig) {
         cell.className = 'cell';
     }
     return cell;
-
 };
 
 create(data);
