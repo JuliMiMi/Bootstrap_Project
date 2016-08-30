@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body {
+    font-size: 16px;
+    font-family: "PT Sans", sans-serif;
+    margin: 0px;
+    line-height: 1.5;
+
+}
+
+.container {
+    width: 575px;
+    vertical-align: top;
+
+}
+
+.row {
+    width: 100%;
+    background: lightgrey;
+    margin: -3px;
+    vertical-align: top;
+    box-sizing: border-box;
+
+}
+
+.cell {
+    width: 23px;
+    min-height: 23px;
+
+    text-align: center;
+    background: darkgrey;
+    border: solid #2c3e50 1px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 0px;
+
+}
+
+.wall {
+    width: 29px;
+    min-height: 29px;
+    text-align: center;
+    background: #3498db;
+    display: inline-block;
+    margin: -3px;
+
+}
