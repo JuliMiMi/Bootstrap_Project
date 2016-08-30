@@ -24,31 +24,43 @@ var data = [
     ['w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w']
 ];
 
-var draw = function (containerConfig) {
+var create = function (containerConfig) {
+    var container = document.createElement('div');
+    container.className = 'container';
     for (var i = 0; i < containerConfig.length; i++) {
         var rowConfig = containerConfig[i];
-        drawRow(rowConfig);
+        createRow(rowConfig,rowConfig.length );
+        container.appendChild(createRow());
+
     }
+    document.body.appendChild(container);
+
+
 };
 
-var drawRow = function (rowConfig) {
-    for (var i = 0; i < rowConfig.length; i++) {
+var createRow = function (rowConfig, lengthRow) {
+    var row = document.createElement('div');
+    row.className = 'row';
+    for (var i = 0; i < lengthRow; i++) {
         var cellConfig = rowConfig[i];
-        drawCell(cellConfig);
+        createCell(cellConfig);
+       row.appendChild(createCell());
     }
+    return row;
 };
 
-var drawCell = function (cellConfig) {
+var createCell = function (cellConfig) {
     var cell = document.createElement('div');
 
     if (cellConfig === 'w') {
-        //wall
+        cell.className = 'wall';
     }
 
     if (cellConfig === 'c') {
-        //cell
+        cell.className = 'cell';
     }
     return cell;
+
 };
 
-draw(data);
+create(data);
