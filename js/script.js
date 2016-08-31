@@ -26,7 +26,6 @@ var data = [
 
 var create = function (containerConfig) {
     var container = document.createElement('div');
-
     container.className = 'container';
     for (var i = 0; i < containerConfig.length; i++) {
         var rowConfig = containerConfig[i];
@@ -36,11 +35,17 @@ var create = function (containerConfig) {
 
     document.body.appendChild(container);
 
-    //var modCell = document.querySelectorAll('div');
-    //modCell.addEventListener('click', function () {
-    //    modCell.className = 'wall';
-    //    console.log("Кнопка нажата");
-    //});
+    var modCell = document.querySelector('.cell');
+    modCell.addEventListener('click', function () {
+        modCell.className = 'wall';
+       console.log("Нажат круг");
+    });
+
+    var modWall = document.querySelector('.wall');
+    modWall.addEventListener('click', function () {
+        modWall.className = 'cell';
+        console.log("Нажата стена");
+    });
 
 };
 
@@ -69,6 +74,7 @@ var createCell = function (cellConfig) {
 
 
 };
+
 
 
 create(data);
