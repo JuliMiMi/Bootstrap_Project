@@ -26,13 +26,22 @@ var data = [
 
 var create = function (containerConfig) {
     var container = document.createElement('div');
+
     container.className = 'container';
     for (var i = 0; i < containerConfig.length; i++) {
         var rowConfig = containerConfig[i];
         var row = createRow(rowConfig);
         container.appendChild(row);
     }
+
     document.body.appendChild(container);
+
+    //var modCell = document.querySelectorAll('div');
+    //modCell.addEventListener('click', function () {
+    //    modCell.className = 'wall';
+    //    console.log("Кнопка нажата");
+    //});
+
 };
 
 var createRow = function (rowConfig) {
@@ -57,6 +66,14 @@ var createCell = function (cellConfig) {
         cell.className = 'cell';
     }
     return cell;
+
+
 };
 
+
 create(data);
+
+
+
+
+

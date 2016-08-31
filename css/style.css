@@ -1,43 +1,47 @@
 * {
     box-sizing: border-box;
     margin: 0px;
-    padding: 0px;
+
 
 }
 
 body {
     font-size: 16px;
     font-family: "PT Sans", sans-serif;
-    margin: 0px;
-    line-height: 1.5;
 
 }
 
 .container {
-    width: 575px;
-    vertical-align: top;
 
+    width:548px; /*Ширина блока*/
+    height:548px; /*Высота блока*/
+    /*overflow:visible;*/
+    position:absolute;
+    left:50%;
+    margin-left: -255px; /*Смещаем блок на половину всей ширины влево*/
+
+    background: lightgrey;
 }
 
 .row {
-    width: 100%;
-    background: lightgrey;
+
     margin: -3px;
-    vertical-align: top;
-    box-sizing: border-box;
+    overflow:visible;
+    width:580px; /*Ширина блока*/
+    height:32px;
+
+
 
 }
 
 .cell {
-    width: 23px;
-    min-height: 23px;
-
-    text-align: center;
-    background: darkgrey;
-    border: solid #2c3e50 1px;
+    width: 25px;
+    height: 25px;
+    background: lightskyblue;
+    border: solid darkgreen 2px;
     display: inline-block;
     border-radius: 10px;
-    margin: 0px;
+    margin: 2px;
 
 }
 
@@ -45,8 +49,12 @@ body {
     width: 29px;
     min-height: 29px;
     text-align: center;
-    background: #3498db;
+    background: darkgray;
     display: inline-block;
-    margin: -3px;
+    margin: 0px;
 
+
+}
+.inline-block {
+    margin: -4px;
 }
