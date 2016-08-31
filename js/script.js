@@ -35,17 +35,6 @@ var create = function (containerConfig) {
 
     document.body.appendChild(container);
 
-    var modCell = document.querySelector('.cell');
-    modCell.addEventListener('click', function () {
-        modCell.className = 'wall';
-       console.log("Нажат круг");
-    });
-
-    var modWall = document.querySelector('.wall');
-    modWall.addEventListener('click', function () {
-        modWall.className = 'cell';
-        console.log("Нажата стена");
-    });
 
 };
 
@@ -70,11 +59,25 @@ var createCell = function (cellConfig) {
     if (cellConfig === 'c') {
         cell.className = 'cell';
     }
+
+    cell.addEventListener('click', function () {
+        switch (event.currentTarget.className) {
+            case ('cell'):
+                console.log("Нажат круг");
+                cell.className = 'wall';
+                break;
+            case ('wall'):
+                console.log("Нажата стена");
+                cell.className = 'cell';
+                break;
+        }
+    });
+
+
     return cell;
 
 
 };
-
 
 
 create(data);
